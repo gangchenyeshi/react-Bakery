@@ -42,22 +42,36 @@ class App extends React.Component {
       return false
     }
   }
-  render() {
+  renderContent = ()=> {
+    switch(this.state.activeTabs) {
+      case 'add':
+        return <Add></Add>
+      case 'list':
+        return <List></List>
+      case 'Pay':
+        return <Pay></Pay>
+      default:
+        return <Add></Add>
+    }
+  }
+    render() {
     return (
       <div>
-        {/* <Button onClick = {this.selectAdd} 
+        <Button onClickButton = {this.selectAdd} 
                 isSelected = {this.state.activeTabs === "add" ? true : false}>Add </Button>
-        <Button onClick =  {this.selectList} 
+        <Button onClickButton =  {this.selectList} 
                 isSelected = {this.state.activeTabs === "list" ? true : false}>List </Button>
-        <Button onClick =  {this.selectPay} 
-                isSelected = {this.state.activeTabs === "pay" ? true : false}>Pay</Button> */}
+        <Button onClickButton =  {this.selectPay} 
+                isSelected = {this.state.activeTabs === "pay" ? true : false}>Pay</Button>
 
-        <Button onClick = {this.selectAdd} 
+        {this.renderContent()}
+
+        {/* <Button onClickButton = {this.selectAdd} 
                 isSelected = {this.changeTab ("add")}>Add </Button>
-        <Button onClick =  {this.selectList} 
+        <Button onClickButton =  {this.selectList} 
                 isSelected = {this.changeTab  ("list")}>List </Button>
-        <Button onClick =  {this.selectPay} 
-                isSelected = {this.changeTab ("pay")}>Pay</Button>
+        <Button onClickButton =  {this.selectPay} 
+                isSelected = {this.changeTab ("pay")}>Pay</Button> */}
         
       </div>
     );
