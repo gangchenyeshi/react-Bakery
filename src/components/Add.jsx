@@ -1,16 +1,13 @@
-// import React from 'react';
+import React from 'react';
 
-// class Add extends React.component {
+class Add extends React.Component {
     
-//     render () {
-//         return (
-//             <div className="container-fluid">
-//                 <div className="row">
-//                     {/* <input type="text" placeholder="item" /> */}
-//                     Add
-//                 </div>
-//             </div>
-//         )
-//     }
-// }
-// export default Add;
+    render () {
+        return (
+            <div>
+                Add button
+            </div>
+        )
+    }
+}
+export default Add;
