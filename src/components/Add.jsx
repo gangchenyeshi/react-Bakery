@@ -26,7 +26,9 @@ class Add extends React.Component {
     }
     
     click=()=> {
-        console.log('Click Me')
+        console.log('Click Me', this.state.productName, this.state.price)
+        this.props.addItem(this.state.productName, this.state.price)
+        console.log('Click Me', this.state.productName, this.state.price)
     }
     render () {
         return (

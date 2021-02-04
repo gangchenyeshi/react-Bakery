@@ -6,8 +6,14 @@ class List extends React.Component {
         return (
             <div className="container-fluid">
                 <div className="row">
-                    {/* <input type="text" placeholder="item" /> */}
-                    List
+                    <ul>
+                        {this.props.listItem.map(element => {
+                            return (
+                                <li>{element.name} - {element.price}</li>
+                            )
+                        })}
+                    </ul>
+                    
                 </div>
             </div>
         )
