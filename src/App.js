@@ -54,6 +54,12 @@ class App extends React.Component {
         return <Add></Add>
     }
   }
+  addItem(name, price) {
+    this.setState ({
+      
+    })
+
+  }
     render() {
     return (
       <div>

@@ -1,7 +1,6 @@
 import React from 'react';
 
-const min = 1;
-const max = 10;
+
 class Add extends React.Component {
     constructor() {
         super();
@@ -12,17 +11,23 @@ class Add extends React.Component {
         this.upDatePrice = this.upDatePrice.bind(this);
         this.upDateProductName = this.upDateProductName.bind(this);
     }
-    upDateProductName(e) {
+    upDateProductName(event) {
+        console.log("before this.setState", this.state.productName)
         this.setState ({
-            productName : this.state.productName
+            productName : event.target.value
         })
+        console.log("After this.setState", this.state.productName)
     }
     upDatePrice(event) {
+        console.log(this.state.price)
         this.setState({
             price : event.target.value
         })
     }
     
+    click=()=> {
+        console.log('Click Me')
+    }
     render () {
         return (
             <div>
@@ -30,12 +35,13 @@ class Add extends React.Component {
                        placeholder="items"
                        onChange={this.upDateProductName}></input>
                 <input type="button" 
-                       value="Add"></input>
-                <br></br>
+                       value="Add"
+                       onClick={this.click} ></input>
+                
                 <p>{this.state.price} €</p>
                 <input type="range" 
+                       min={1} max={10} 
                        value={this.state.price} 
-                       min={min} max={max} 
                        onChange={this.upDatePrice}
                        onInput={this.upDatePrice}></input>
             </div>
