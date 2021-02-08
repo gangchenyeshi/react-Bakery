@@ -72,16 +72,21 @@ class App extends React.Component {
   
     render() {
     return (
-      <div>
-        <Button onClickButton = {this.selectAdd} 
-                isSelected = {this.state.activeTabs === "add" ? true : false}>Add </Button>
-        <Button onClickButton =  {this.selectList} 
-                isSelected = {this.state.activeTabs === "list" ? true : false}>List </Button>
-        <Button onClickButton =  {this.selectPay} 
-                isSelected = {this.state.activeTabs === "pay" ? true : false}>Pay</Button>
+      <div className="container-fluid">
+        <div className="row">
+            <div className="col-6">
+                <Button onClickButton = {this.selectAdd} 
+                    isSelected = {this.state.activeTabs === "add" ? true : false}>Add </Button>
+                <Button onClickButton =  {this.selectList} 
+                    isSelected = {this.state.activeTabs === "list" ? true : false}>List </Button>
+                <Button onClickButton =  {this.selectPay} 
+                    isSelected = {this.state.activeTabs === "pay" ? true : false}>Pay</Button>
 
         {this.renderContent()}
 
+            </div>
+        </div>
+        
         {/* <Button onClickButton = {this.selectAdd} 
                 isSelected = {this.changeTab ("add")}>Add </Button>
         <Button onClickButton =  {this.selectList} 

@@ -14,10 +14,13 @@ class Button extends React.Component {
     // }
     render () {
         return(
-            <button type="button" 
-                    onClick ={this.props.onClickButton}
-                    className={this.props.isSelected === true ? "btn btn-primary" : "btn btn-light"}>
-                    {this.props.children}</button>
+                    <button type="button" 
+                                onClick ={this.props.onClickButton}
+                                className={this.props.isSelected === true ? "btn btn-primary" : "btn btn-light"}>
+                        {this.props.children}
+                        </button>
+                
+            
             
             // <button type="button" 
             //         onClick ={this.props.onClickButton}
